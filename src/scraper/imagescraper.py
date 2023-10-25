@@ -6,13 +6,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
+from webdriver_manager.chrome import ChromeDriverManager
 
 class ImageScraperDriver:
     """
     Generic search engine Image Scraper based on Selenium for firefox
     """
 
-    def __init__(self, images_xpath, selected_image_xpath, show_more_xpaths, search_url, num_images, image_queue, url_blacklist=[], start_at=0):
+    def __init__(self, images_xpath, selected_image_xpath, show_more_xpaths, search_url, num_images, image_queue, headless, url_blacklist=[], start_at=0):
         self.images_xpath = images_xpath
         self.selected_image_xpath = selected_image_xpath
         self.show_more_xpaths = show_more_xpaths
@@ -24,9 +25,11 @@ class ImageScraperDriver:
         options.add_argument("log-level=3")
         options.add_argument("disable-gpu")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
-        # options.add_argument("headless")
+        if headless: 
+            options.add_argument("headless")
 
-        self.driver = webdriver.Chrome(options=options)
+        # self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         self.driver.implicitly_wait(2)
         
         self.errors = 0 + start_at

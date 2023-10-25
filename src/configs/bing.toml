@@ -1,0 +1,32 @@
+[BingImagesLarge]
+images_xpath = "//img[contains(@class,'mimg')]"
+selected_image_xpath = "//img[@class=\"sFlh5c pT0Scc iPVvYb\" and @jsname=\"kn3ccd\"]"
+show_more_xpaths = [
+    "//input[@type='button' and @value='Show more results' and not(@hidden)]",
+    "//span[contains(@class,'r0zKGf') and contains(text(),'See more anyway')]",
+    "//div[text()=\"Looks like you've reached the end\"]",
+    "//a[class='frGj1b']"
+]
+base_search_url = "https://www.bing.com/images/search?q={query}&qft=+filterui:imagesize-large"
+
+[BingImagesDefault]
+images_xpath = "//img[contains(@class,'rg_i')]"
+selected_image_xpath = "//img[@class=\"sFlh5c pT0Scc iPVvYb\" and @jsname=\"kn3ccd\"]"
+show_more_xpaths = [
+    "//input[@type='a' and @value='Show more results' and not(@hidden)]",
+    "//a[class='btn_seemore']"
+]
+base_search_url = "https://www.bing.com/images/search?q={query}"
+
+
+[BingImagesExtraLarge]
+images_xpath = "//img[contains(@class,'rg_i')]"
+selected_image_xpath = "//img[@class=\"sFlh5c pT0Scc iPVvYb\" and @jsname=\"kn3ccd\"]"
+show_more_xpaths = [
+    "//input[@type='button' and @value='Show more results' and not(@hidden)]",
+    "//span[contains(@class,'r0zKGf') and contains(text(),'See more anyway')]",
+    "//div[text()=\"Looks like you've reached the end\"]",
+    "//a[class='frGj1b']"
+]
+base_search_url = "https://www.bing.com/images/search?q={query}&qft=+filterui:imagesize-wallpaper"
+

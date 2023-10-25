@@ -1,0 +1,21 @@
+[GoogleImagesLarge]
+images_xpath = "//img[contains(@class,'rg_i')]"
+selected_image_xpath = "//img[@class=\"sFlh5c pT0Scc iPVvYb\" and @jsname=\"kn3ccd\"]"
+show_more_xpaths = [
+    "//input[@type='button' and @value='Show more results' and not(@hidden)]",
+    "//span[contains(@class,'r0zKGf') and contains(text(),'See more anyway')]",
+    "//div[text()=\"Looks like you've reached the end\"]",
+    "//a[class='frGj1b']"
+]
+base_search_url = "https://www.google.com/search?q={query}&tbm=isch&tbs=isz:l"
+
+[GoogleImagesDefault]
+images_xpath = "//img[contains(@class,'rg_i')]"
+selected_image_xpath = "//img[@class=\"sFlh5c pT0Scc iPVvYb\" and @jsname=\"kn3ccd\"]"
+show_more_xpaths = [
+    "//input[@type='button' and @value='Show more results' and not(@hidden)]",
+    "//span[contains(@class,'r0zKGf') and contains(text(),'See more anyway')]",
+    "//div[text()=\"Looks like you've reached the end\"]",
+    "//a[class='frGj1b']"
+]
+base_search_url = "https://www.google.com/search?q={query}&tbm=isch"
