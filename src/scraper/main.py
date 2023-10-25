@@ -71,7 +71,7 @@ def main():
     parser.add_argument("--config", default="GoogleImagesLarge", help="Specify a configuration file or title within the 'configs' directory")
     
     parser.add_argument("--list-configs", action='store_true', help="List available TOML configuration files in the 'configs' directory")
-    parser.add_argument("--headless", action='store_true', default=True, help="Run in headless mode")
+    parser.add_argument("--no-headless", action='store_true', help="Run without headless mode")
 
     args = parser.parse_args()
 
@@ -102,7 +102,7 @@ def main():
             config_key = list(configs.keys())[0]
         config = config_mapping[config_key]
         
-        start(args.query, args.save_folder, args.num_images, args.blacklist, args.headless, config)
+        start(args.query, args.save_folder, args.num_images, args.blacklist, not args.no_headless, config)
 
 if __name__ == "__main__":
     main()
